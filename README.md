@@ -44,10 +44,14 @@ After training the trained model and training information would be places at .\R
 ## prediction
 
 For prediction, it is assumed the test images and gtound truth keypoints are in a pickle.
-e.g. Data_Test.pickle in data0 folder.
+e.g. Data_Test.pickle in data0 folder with following data structure. X contains images (10 images, gray scale, with size 80x80) and  truth_kpts are the corresponding landmarks. <br>
+![Alt text](screen-21.58.58[16.05.2019].png?raw=true "Title") <br>
+
+Note that, for RCN we should prepared our test data such as above config. image size=80x80 and gray scale. 
+
 use following line to predict by trained network. A picke contains both ground truth and predicted keypoints would be generated in outputs folder.
 > python ./RCN/plotting/export_draw_points_guide.py  --img_path=./data0/Data_Test.pickle  --path=./RCN/models/exp_shared_conv/shared_conv_params_RCN_300W_test_300W.pickle  
-
-
+<br>
+![Alt text](screen-22.05.34[16.05.2019].png?raw=true "Title") <br>
 
 
