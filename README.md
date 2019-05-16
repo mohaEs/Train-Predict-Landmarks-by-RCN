@@ -25,12 +25,28 @@ e.g. <br>
 > export PYTHONPATH=~/Desktop/Train-Predict-Landmarks-by-master:$PYTHONPATH <br>
 
 ## prepare train data:
+all of our data (images and corresponding .pts file of keypoints), should be places in ./data0/Train_set/data/.  <br>
+Already, I have put some data for fasting start. <br>
+use following command to generate the training pickle: <br>
+> python ./RCN/preprocessing/create_raw_300W.py --src_dir=./data0/ --dest_dir=./data0
+
+now, move the generated pickle file to the path which is necessary for RCN by: <br>
+> mv -f ./data0/300W_train_160by160.pickle ./RCN/datasets/300W/
 
 ## train:
 
+For training the RCN on 68 landmark dataset use following line: <br>
+> python ./RCN/models/create_procs.py --L2_coef=1e-12 --L2_coef_ful=1e-08 --file_suffix=RCN_300W_test --num_epochs=1 --paral_conv=5.0 --use_lcn --block_img
+
+do not forget to set the num_epochs.  <br>
+After training the trained model and training information would be places at .\RCN\models\exp_shared_conv\  <br>
 
 ## prediction
 
+For prediction, it is assumed the test images and gtound truth keypoints are in a pickle.
+e.g. Data_Test.pickle in data0 folder.
+use following line to predict by trained network. A picke contains both ground truth and predicted keypoints would be generated in outputs folder.
+> python ./RCN/plotting/export_draw_points_guide.py  --img_path=./data0/Data_Test.pickle  --path=./RCN/models/exp_shared_conv/shared_conv_params_RCN_300W_test_300W.pickle  
 
 
 
