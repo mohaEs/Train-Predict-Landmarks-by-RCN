@@ -34,6 +34,10 @@ now, move the generated pickle file to the path which is necessary for RCN by: <
 > mv -f ./data0/300W_train_160by160.pickle ./RCN/datasets/300W/
 
 ## train:
+First config the theano by <br>
+> THEANO_FLAGS=floatX=float32,device=gpu,force_device=True <br>
+or if for cpu:  <br>
+> THEANO_FLAGS=floatX=float32,device=cpu,force_device=True <br>
 
 For training the RCN on 68 landmark dataset use following line: <br>
 > python ./RCN/models/create_procs.py --L2_coef=1e-12 --L2_coef_ful=1e-08 --file_suffix=RCN_300W_test --num_epochs=1 --paral_conv=5.0 --use_lcn --block_img
