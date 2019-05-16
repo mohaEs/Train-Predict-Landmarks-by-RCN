@@ -20,9 +20,9 @@ My interest was just 68 landmarks version of the paper.
 echo -e "\n[global]\nfloatX=float32\n" >> ~/.theanorc
 
 ## adding RCN to python path:
-> export PYTHONPATH=/path/to/parent/dir/of/our-repository:$PYTHONPATH
-e.g.
-> export PYTHONPATH=~/Desktop/Train-Predict-Landmarks-by-master:$PYTHONPATH
+> export PYTHONPATH=/path/to/parent/dir/of/our-repository:$PYTHONPATH <br>
+e.g. <br>
+> export PYTHONPATH=~/Desktop/Train-Predict-Landmarks-by-master:$PYTHONPATH <br>
 
 ## prepare train data:
 
