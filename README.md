@@ -5,18 +5,18 @@ The original repository was very dependent to the face datasets and this reposit
 My interest was just 68 landmarks version of the paper.
 
 ## set up:
--Ubuntu 16.4 <br>
--python 2.7 <br>
--create your python environment if you prefer <br>
--install opencv <br>
+- Ubuntu 16.4 <br>
+- python 2.7 <br>
+- create your python environment if you prefer <br>
+- install opencv <br>
     pip install opencv-python <br>
     pip install opencv-contrib-python <br>
--install pil <br>
+- install pil <br>
     pip install Pillow <br>
 
--install theano <br>
+- install theano <br>
     
--create config file for theano <br>
+- create config file for theano <br>
 echo -e "\n[global]\nfloatX=float32\n" >> ~/.theanorc <br>
 
 ## adding RCN to python path: 
