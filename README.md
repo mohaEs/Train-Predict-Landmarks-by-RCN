@@ -19,7 +19,11 @@ My interest was just 68 landmarks version of the paper.
 - create config file for theano <br>
 echo -e "\n[global]\nfloatX=float32\n" >> ~/.theanorc <br>
 
+## termina
+make sure terminal is located in this repository. <br>
+e.g. ~/Desktop/Train-Predict-Landmarks-by-master
 ## adding RCN to python path: 
+
 > export PYTHONPATH=/path/to/parent/dir/of/our-repository:$PYTHONPATH <br>
 e.g. <br>
 > export PYTHONPATH=~/Desktop/Train-Predict-Landmarks-by-master:$PYTHONPATH <br>
