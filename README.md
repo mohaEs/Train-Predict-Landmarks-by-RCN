@@ -31,6 +31,7 @@ use following command to generate the training pickle: <br>
 > python ./RCN/preprocessing/create_raw_300W.py --src_dir=./data0/ --dest_dir=./data0
 
 now, move the generated pickle file to the path which is necessary for RCN by: <br>
+> mkdir ./RCN/datasets/300W <br>
 > mv -f ./data0/300W_train_160by160.pickle ./RCN/datasets/300W/
 
 ## train:
