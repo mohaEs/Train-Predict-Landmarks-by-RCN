@@ -2011,7 +2011,7 @@ class Train(object):
                 sys.stderr.write('train epoch cost_kpt is %s\n' %(train_epoch_cost_kpt))
                 sys.stderr.write('valid epoch cost is %s\n' %(valid_epoch_cost))
                 sys.stderr.write('valid epoch cost_kpt is %s\n' %(valid_epoch_cost_kpt))
-                sys.stderr.write('test epoch error_kpt_avg is %s\n' %(test_epoch_error_kpt_avg,))
+                #sys.stderr.write('test epoch error_kpt_avg is %s\n' %(test_epoch_error_kpt_avg,))
 
         ##########################################
         # outside the loop of training the model #
