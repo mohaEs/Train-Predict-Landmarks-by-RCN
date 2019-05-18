@@ -27,7 +27,7 @@ e.g. ~/Desktop/Train-Predict-Landmarks-by-RCN-master
 all of our data (images and corresponding .pts file of keypoints), should be places in ./data0/Train_set/data/.  <br>
 Already, I have put some data for fasting start. <br>
 use following command to generate the training pickle: <br>
-> python ./RCN/models/create_raw_300W.py --src_dir=./data0/ --dest_dir=./data0
+> python ./RCN/datasets/create_raw_300W.py --src_dir=./data0/ --dest_dir=./data0
 
 now, move the generated pickle file to the path which is necessary for RCN by: <br>
 > mv -f ./data0/300W_train_160by160.pickle ./RCN/datasets/300W/
