@@ -21,7 +21,7 @@ echo -e "\n[global]\nfloatX=float32\n" >> ~/.theanorc <br>
 
 ## terminal
 make sure terminal is located in this repository. <br>
-e.g. ~/Desktop/Train-Predict-Landmarks-by-master
+e.g. ~/Desktop/Train-Predict-Landmarks-by-RCN-master
 
 ## prepare train data:
 all of our data (images and corresponding .pts file of keypoints), should be places in ./data0/Train_set/data/.  <br>
