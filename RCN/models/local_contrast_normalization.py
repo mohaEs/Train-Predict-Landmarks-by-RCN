@@ -26,14 +26,14 @@ def lcn(x, nchannels, dim, size=9):
     g /= g.sum()
     g = np.float32(g.reshape((1, 1, size,size)))
     g = np.tile(g, (1, nchannels, 1, 1))
-    mean = T.nnet.conv.conv2d(x, T.constant(g),
+    mean = T.nnet.conv2d(x, T.constant(g),
                               (None, nchannels, dim, dim),
                               (1, nchannels, size, size),
                               'full')
     mean = mean[:, :, size/2: dim+size/2,
                 size/2: dim+size/2]
     v = x - mean
-    var = T.nnet.conv.conv2d(T.sqr(v),T.constant(g),
+    var = T.nnet.conv2d(T.sqr(v),T.constant(g),
                              (None, nchannels, dim, dim),
                              (1, nchannels, size, size),
                              'full')

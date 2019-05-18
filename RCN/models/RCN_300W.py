@@ -1,7 +1,7 @@
 import numpy as np
 import theano
 import theano.tensor as T
-from theano.tensor.nnet import conv
+from theano.tensor.nnet import conv2d
 from collections import OrderedDict
 import cPickle as pickle
 import time
@@ -506,7 +506,7 @@ def fforward_model(layer1_input, dropout, nkerns, num_img_channels, dim, rng,
         layerS3_filters = bilinear_weights(dim=nkerns[13], ratio=ratio).astype(theano.config.floatX)
         index_start = layerS3_filters.shape[-1]/2
 
-        layerS3 = conv.conv2d(
+        layerS3 = conv2d(
             input=layerS3_input,
             filters=layerS3_filters,
             image_shape=(None, nkerns[13], None, None),
@@ -596,7 +596,7 @@ def fforward_model(layer1_input, dropout, nkerns, num_img_channels, dim, rng,
         layerD3_filters = bilinear_weights(dim=nkerns[5], ratio=ratio).astype(theano.config.floatX)
         index_start = layerD3_filters.shape[-1]/2
 
-        layerD3 = conv.conv2d(
+        layerD3 = conv2d(
             input=layerD3_input,
             filters=layerD3_filters,
             image_shape=(None, nkerns[5], None, None),
@@ -686,7 +686,7 @@ def fforward_model(layer1_input, dropout, nkerns, num_img_channels, dim, rng,
         layerC3_filters = bilinear_weights(dim=nkerns[7], ratio=ratio).astype(theano.config.floatX)
         index_start = layerC3_filters.shape[-1]/2
 
-        layerC3 = conv.conv2d(
+        layerC3 = conv2d(
             input=layerC3_input,
             filters=layerC3_filters,
             image_shape=(None, nkerns[7], None, None),
@@ -776,7 +776,7 @@ def fforward_model(layer1_input, dropout, nkerns, num_img_channels, dim, rng,
         layerM3_filters = bilinear_weights(dim=nkerns[9], ratio=ratio).astype(theano.config.floatX)
         index_start = layerM3_filters.shape[-1]/2
 
-        layerM3 = conv.conv2d(
+        layerM3 = conv2d(
             input=layerM3_input,
             filters=layerM3_filters,
             image_shape=(None, nkerns[9], None, None),
