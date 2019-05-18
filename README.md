@@ -22,20 +22,14 @@ echo -e "\n[global]\nfloatX=float32\n" >> ~/.theanorc <br>
 ## terminal
 make sure terminal is located in this repository. <br>
 e.g. ~/Desktop/Train-Predict-Landmarks-by-master
-## adding RCN to python path: 
-
-> export PYTHONPATH=/path/to/parent/dir/of/our-repository:$PYTHONPATH <br>
-e.g. <br>
-> export PYTHONPATH=~/Desktop/Train-Predict-Landmarks-by-master:$PYTHONPATH <br>
 
 ## prepare train data:
 all of our data (images and corresponding .pts file of keypoints), should be places in ./data0/Train_set/data/.  <br>
 Already, I have put some data for fasting start. <br>
 use following command to generate the training pickle: <br>
-> python ./RCN/preprocessing/create_raw_300W.py --src_dir=./data0/ --dest_dir=./data0
+> python ./RCN/models/create_raw_300W.py --src_dir=./data0/ --dest_dir=./data0
 
 now, move the generated pickle file to the path which is necessary for RCN by: <br>
-> mkdir ./RCN/datasets/300W <br>
 > mv -f ./data0/300W_train_160by160.pickle ./RCN/datasets/300W/
 
 ## train:
@@ -59,7 +53,7 @@ e.g. Data_Test.pickle in data0 folder with following data structure. X contains 
 Note that, for RCN we should prepared our test data such as above config. image size=80x80 and gray scale. 
 
 use following line to predict by trained network. A picke contains both ground truth and predicted keypoints would be generated in outputs folder.
-> python ./RCN/plotting/export_draw_points_guide.py  --img_path=./data0/Data_Test.pickle  --path=./RCN/models/exp_shared_conv/shared_conv_params_RCN_300W_test_300W.pickle  
+> python ./RCN/models/export_draw_points_guide.py  --img_path=./data0/Data_Test.pickle  --path=./RCN/models/exp_shared_conv/shared_conv_params_RCN_300W_test_300W.pickle  
 
 ![Alt text](screen-22.05.34[16.05.2019].png?raw=true "Title") <br>
 
