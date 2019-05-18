@@ -34,7 +34,7 @@ now, move the generated pickle file to the path which is necessary for RCN by: <
 
 ## train:
 First config the theano by <br>
-> THEANO_FLAGS=floatX=float32,device=gpu,force_device=True <br>
+> THEANO_FLAGS=floatX=float32,device=cuda,force_device=True <br>
 or if for cpu:  <br>
 > THEANO_FLAGS=floatX=float32,device=cpu,force_device=True <br>
 
