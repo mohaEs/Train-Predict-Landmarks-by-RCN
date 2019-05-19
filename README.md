@@ -60,6 +60,6 @@ use following line to predict by trained network. A picke contains both ground t
 ## dealing with own dataset
 
 if we are not interested in face landmarks, we could use <br>
-python ./RCN/models/create_procs_noface.py --L2_coef=1e-12 --L2_coef_ful=1e-08 --file_suffix=RCN_300W_test --num_epochs=1 --paral_conv=5.0 --use_lcn --block_img
+> python ./RCN/models/create_procs_noface.py --L2_coef=1e-12 --L2_coef_ful=1e-08 --file_suffix=RCN_300W_test --num_epochs=1 --paral_conv=5.0 --use_lcn --block_img
 
 which is not based on face detection and rectangles are fixed with for 256x256 images <br>
